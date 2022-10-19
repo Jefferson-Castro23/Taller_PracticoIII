@@ -8,8 +8,10 @@ body {
   background: #bfd7ea;
 }
 
-<<<<<<< HEAD
-=======
+.bienvenido{
+  color: red;
+}
+
 h1 {
   margin: auto;
   text-align: center;
@@ -22,7 +24,6 @@ h1 {
   grid-template-rows: 2fr 2fr;
   row-gap: 1rem;
 }
->>>>>>> c64982b2b6c576f7c32f32c7090004c7f8972ec8
 
 .form {
   display: grid;
@@ -74,10 +75,15 @@ td {
   padding: 0.8rem;
 }
 
+tr{
+  background-color: #ff5a5f;
+}
+
 .titulo {
   font-weight: bold;
   font-style: italic;
   font-size: 1.25rem;
+  color: blue;
 }
 
 .cuerpo {

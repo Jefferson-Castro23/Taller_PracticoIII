@@ -38,6 +38,18 @@ function validar(nombre, dui, nit, year, placa, fallas){
     alert('ERROR: El nombre ingresado es inválido');
     return 0;
   }
+
+  if (localStorage.length === 0){
+    console.log("No hay nada");
+    return 0;
+  }else{
+    console.log("hay algo");
+    for (let i = 0; i < localStorage.length; i++){
+      if (localStorage.key(i) == dui){
+        
+      }
+    }
+  }
 }
 
 function mostrar(dui){
@@ -50,14 +62,14 @@ function mostrar(dui){
     return 0;
   }else{
     console.log("hay algo");
-    for (let index = 0; index < localStorage.length; index++){
-      console.log(localStorage.key(index).toString());
-      const key = localStorage.key(index);
-      let tdNom = localStorage.key(index).toString();
+    for (let i = 0; i < localStorage.length; i++){
+      console.log(localStorage.key(i).toString());
+      const key = localStorage.key(i);
+      let tdNom = localStorage.key(i).toString();
       console.log(tdNom);
       let tdProm = localStorage.getItem(key).toString();
       console.log(tdProm);
-      if (index%2 == 0)
+      if (i%2 == 0)
         tabla.innerHTML += "<tr class='filaCuerpo-Impar'><td class='cuerpo'>"+tdNom+"</td><td class='cuerpo'>"+tdProm+"</td></tr>";
       else
         tabla.innerHTML += "<tr class='filaCuerpo-Par'><td class='cuerpo'>"+tdNom+"</td><td class='cuerpo'>"+tdProm+"</td></tr>";

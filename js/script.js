@@ -22,6 +22,6 @@ function validar(nombre, dui, nit, year, fallas){
 
   if (!expNom.test(nombre) || nombre == ""){
     alert('ERROR: El nombre ingresado es inválido');
-    return 0;
+    return false;
   }
 }

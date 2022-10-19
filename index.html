@@ -17,56 +17,99 @@
   <div class="container">
     <div class="form">
 
-<<<<<<< HEAD
-<input type="text" id="nombre" value="" title="Solo se acepta letras" class="control" placeholder="Nombre" required><br>
-<input type="number" id="dui" value="" title="Solo se acepta numeros" class="control" placeholder="DUI" required><br>
-<input type="number" id="nit" value="" title="Solo se acepta numeros" class="control" placeholder="NIT" required><br>
-</table>
-=======
       <div class="titulo">
         <h3>Llene los campos solicitados</h3>
       </div>
-      <fieldset id="datos">
-        <legend>Datos</legend>
+      <fieldset id="datosD">
+        <legend>Datos del Dueño:</legend>
 
-        <input type="text" id="nombre" value="" title="Solo se acepta letras" class="control" placeholder="Nombre"
-          required><br>
+        <div>
+          <label for="">Ingrese el Nombre:</label>
+          <input type="tSeleccione=" nombre" value="" <select name="" id="marca">
+          <option value="">-- Seleccione la Marca del Automóvil --</option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+          </select>
+        </div>
 
-        <input type="number" id="dui" value="" title="Solo se acepta numeros" class="control" placeholder="DUI"
-          required><br>
->>>>>>> 3c269438246f1296b6356e834f124b4222897ab0
+        <div>
+          <label for="">Seleccione el modelo</label>d="dui" value="" title="Solo se acepta numeros" class="control"
+          placeholder="DUI">
+        </div>
 
-        <input type="number" id="nit" value="" title="Solo se acepta numeros" class="control" placeholder="NIT"
-          required><br>
-        </table>
+        <div>
+          <label for="">Ingrese el NIT:</label>
+          <input type="text" id="nit" value="" title="Solo se acepta numeros" class="control" placeholder="NIT">
+        </div>
+      </fieldset>
 
-        <h4>Datos del automovil:</h4>
+      <fieldset id="datosC">
+        <legend>Datos del automóvil:</legend>
 
-        <input type="text" id="marca" value="" class="control" placeholder="Marca" required><br>
-        <td>
-          <input type="text" list="modelo" placeholder="Modelos" />
-          <datalist id="modelo">
+        <div>
+          <label for="">Seleccione la Marca:</label>
+          <select name="" id="marca">
+            <option value="">-- Seleccione la Marca del Automóvil --</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+
+        <div>
+          <label for="">Seleccione el modelo</label>
+          <select id="modelo">
             <option value="Mustang">Mustang</option>
             <option value="Ferrari">Ferrari</option>
             <option value="Lamborgini">Lamborgini</option>
             <option value="Audi">Audi</option>
             <option value="Pick Up">Pick Up</option>
             <option value="Camioneta">Camioneta</option>
-          </datalist>
-          <tr>
-            <td>Año:</td>
-            <td><input type="number" name="Año" min="0" max="100" /></td>
-          </tr>
-          <br>
-          <tr>
-            <td>Color:</td>
-            <td><input type="color" name="color"></td>
-          </tr>
-          <br>
-          <input type="number" id="placa" value="" class="control" placeholder="Placa" required>
-          <br>
-        <td><textarea rows="3" placeholder="Fallas" cols="30"></textarea></TD>
-        </TR>
+          </select>
+        </div>
+
+        <div>
+          <label for="">Año:</label>
+          <input type="number" name="Año" min="1990" max="2022" />
+        </div>
+
+        <div>
+          <label for="">Color:</label>
+          <input type="color" name="color">
+        </div>
+
+        <div>
+          <label for="">Seleccione/label>
+            <select name="" id="marca">
+              <option value="">-- Seleccione la Marca del Automóvil --</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+        </div>
+
+        <div>
+          <label for="">Seleccione el modelo</label>las" cols="30" id="fallas"></textarea>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

@@ -2,8 +2,6 @@ function initializar(){
   document.getElementById("guardar").addEventListener("click", function(){
     guardar();
   });
-  localStorage.clear();
-  mostrar();
 }
 
 function guardar(){
@@ -16,30 +14,24 @@ function guardar(){
   let color = document.getElementById('color').value;
   let placa = document.getElementById('placa').value;
   let fallas = document.getElementById('fallas').value;
-  let hoy = new Date();
-  let dia = hoy.getDate();
-  let mes = hoy.getMonth() + 1;
-  let yearH = hoy.getFullYear();
-  let fechaIng = dia.toString() + '/' + mes.toString() + '/' + yearH.toString();
 
-  if (!validar(nombre, dui, nit, year, placa, fallas)){
+  /*if (!validar(nombre, dui, nit, year, placa, fallas)){
     return 0;
-  }
+  }*/
 
   let info = [
-    nombre, dui, nit, marca, modelo, year, color, fallas, fechaIng
+    nombre, nit, marca, modelo, year, color, placa, fallas
   ];
 
-  localStorage.setItem(placa, JSON.stringify(info));
+  localStorage.setItem(dui, JSON.stringify(info));
   mostrar();
 }
 
-
 function validar(nombre, dui, nit, year, placa, fallas){
   let expNom = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-  let expDui = /^\d{8}-\d$/;
-  let expFallas = /^([\w\u00C0-\u017F]+\s*[0-9]*)*.*\w*$/m;
-  let expPlaca = /^([A-Z]{1}[0-9]{3}\-[A-Z]{1})|([A-Z]{3}\-[0-9]{2}\-[0-9]{2})\z$/;
+  let expDui = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let expFallas = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let expPlaca = /^[a-zA-Z\u00C0-\u017F\s]+$/;
   let expNit = /^\d{4}-\d{6}-\d{3}-\d$/;
 
   if (!expNom.test(nombre) || nombre == ""){
@@ -47,28 +39,28 @@ function validar(nombre, dui, nit, year, placa, fallas){
     return false;
   }
 
-  if (isNaN(year) || (year < 1985 || year > 2022)){
-    alert('ERROR: El año de los carros, deben ser mayores a 1985 y menores a 2022');
+  if (isNan(year) || (year < 1985 || year > 2022)){
+    alert('ERROR: Año de carro inexistente');
     return false;
   }
 
   if (!expDui.test(dui) || dui == ""){
-    alert('ERROR: Dui inválido');
+    alert('ERROR: Dui inexistente');
     return false;
   }
 
   if (!expPlaca.test(placa) || placa == ""){
-    alert('ERROR: Placa inválida');
+    alert('ERROR: Placa no registrada');
     return false;
   }
 
   if (!expNit.test(nit) || nit == ""){
-    alert('ERROR: NIT inválido');
+    alert('ERROR: Nit inexistente');
     return false;
   }
 
   if (!expFallas.test(fallas) || fallas == ""){
-    alert('ERROR: Debe ingresar las fallas del automóvil.');
+    alert('Sus fallas seran arregaladas');
     return false;
   }
 
@@ -87,98 +79,21 @@ function validar(nombre, dui, nit, year, placa, fallas){
 
 function mostrar(){
   let tabla = document.getElementById('datos');
-    tabla.innerHTML = "<table id='tablaResul'><tr class='filaTit'><td class='titulo'>Nombre</td><td class='titulo'>DUI</td><td class='titulo'>NIT</td><td class='titulo'>Marca</td><td class='titulo'>Modelo</td><td class='titulo'>Año</td><td class='titulo'>Color</td><td class='titulo'>Placa</td><td class='titulo'>Fallas</td><td class='titulo'>Fecha Ingreso</td></tr>";
+    tabla.innerHTML = "<table id='tablaResul'><tr class='filaTit'><td class='titulo'>Nombre</td><td class='titulo'>DUI</td><td class='titulo'>NIT</td><td class='titulo'>Marca</td><td class='titulo'>Modelo</td><td class='titulo'>Año</td><td class='titulo'>Color</td><td class='titulo'>Placa</td><td class='titulo'>Fallas</td></tr>";
     tabla = document.getElementById('tablaResul');
   if (localStorage.length === 0){
     return 0;
   }else{
     for (let i = 0; i < localStorage.length; i++){
       const key = localStorage.key(i);
-      let tdPlaca = localStorage.key(i).toString();
-      let infoData = JSON.parse(localStorage.getItem(key));
-      tabla.innerHTML += "<tr><td class='cuerpo'>"+infoData[0]+"</td><td class='cuerpo'>"+infoData[1]+"</td><td class='cuerpo'>"+infoData[2]+"</td><td class='cuerpo'>"+infoData[3]+"</td><td class='cuerpo'>"+infoData[4]+"</td><td class='cuerpo'>"+infoData[5]+"</td><td class='cuerpo'><input type='color' value='"+infoData[6]+"' disabled></td><td class='cuerpo'>"+tdPlaca+"</td><td class='cuerpo'>"+infoData[7]+"</td><td class='cuerpo'>"+infoData[8]+"</td></tr>";
+      let tdDui = localStorage.key(i).toString();
+      console.log(tdNom);
+      let info = localStorage.setItem(key, JSON.stringify(info));
+      console.log(tdProm);
+      tabla.innerHTML += "<tr><td class='cuerpo'>"+info[0]+"</td><td class='cuerpo'>"+tdDui+"</td><td class='cuerpo'>"+info[1]+"</td><td class='cuerpo'>"+info[2]+"</td><td class='cuerpo'>"+info[3]+"</td><td class='cuerpo'>"+info[4]+"</td><td class='cuerpo'>"+info[5]+"</td><td class='cuerpo'>"+info[6]+"</td><td class='cuerpo'>"+info[7]+"</td></tr>";
     }
     tabla.innerHTML += "</table>";
   }
-}
-
-function listarModelos(nomMarca){
-  switch (nomMarca) {
-    case 'Audi':
-      audi = [
-        'A8', 'A4', 'R8'
-      ]
-      ingresarModelos(audi)
-      break;
-
-    case 'Ferrari':
-      ferrari = [
-        'F12', '458', 'California'
-      ]
-      ingresarModelos(ferrari)
-      break;
-
-    case 'Ford':
-      ford = [
-        'Focus', 'Galaxy', 'Grand Torneo Connect'
-      ]
-      ingresarModelos(ford)
-      break;
-
-    case 'Honda':
-      honda = [
-        'Accord', 'Jazz', 'Civic'
-      ]
-      ingresarModelos(honda)
-      break;
-
-    case 'Jaguar':
-      jaguar = [
-        'XF', 'Serie XK', 'F-Type'
-      ]
-      ingresarModelos(jaguar)
-      break;
-
-    case 'Jeep':
-      jeep = [
-        'Grand Cherokee', 'Wrangler Unlimited', 'Cherokeé'
-      ]
-      ingresarModelos(jeep)
-      break;
-
-    case 'Lamborghini':
-      lamborghini = [
-        'Aventador', 'Huracán', 'Murciélago'
-      ]
-      ingresarModelos(lamborghini)
-      break;
-
-    case 'Maserati':
-      maserati = [
-        'Ghibli', 'GranTurismo', 'Levante'
-      ]
-      ingresarModelos(maserati)
-      break;
-
-    case 'Mercedes':
-      mercedes = [
-        'Clase SL', 'Clase SLK', 'Clase V'
-      ]
-      ingresarModelos(mercedes)
-      break;
-  }
-}
-
-function ingresarModelos(modelo){
-  let cadena="";
-  $("#modelo").html(cadena);
-  for (let i=0; i<modelo.length; i++){
-    if (i == 0)
-      cadena +="<option value='"+modelo[i]+"' selected>"+modelo[i]+"</option>";
-    else
-      cadena +="<option value='"+modelo[i]+"'>"+modelo[i]+"</option>";
-  }
-  $("#modelo").html(cadena);
 }
 
 window.onload = initializar;

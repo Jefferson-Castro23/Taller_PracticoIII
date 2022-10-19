@@ -8,9 +8,18 @@ function guardar(){
   let color = document.getElementById('color').value;
   let fallas = document.getElementById('fallas').value;
 
-  validar(nombre, dui, nit, marca, modelo, year, color, fallas);
+  if (!validar(nombre, dui, nit, year, fallas)){
+    return 0;
+  }
 }
 
-function validar(nombre, dui, nit, marca, modelo, year, color, fallas){
-  let 
+function validar(nombre, dui, nit, year, fallas){
+  let expNom = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let expDui = /^\d{8}-\d$/;
+  let expFallas = /^([\w\u00C0-\u017F]+\s*[0-9]*)*.*\w*$/m;
+
+  if (!expNom.test(nombre) || nombre == ""){
+    alert('ERROR: El nombre ingresado es inválido');
+    return 0;
+  }
 }

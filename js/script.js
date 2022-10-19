@@ -9,17 +9,16 @@ function guardar(){
   let fallas = document.getElementById('fallas').value;
 
   if (!validar(nombre, dui, nit, year, fallas)){
-    return 0;
+    return false;
   }
 }
 
 function validar(nombre, dui, nit, year, fallas){
   let expNom = /^[a-zA-Z\u00C0-\u017F\s]+$/;
   let expDui = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-  let expFallas = /^([\w\u00C0-\u017F]+\s*[0-9]*)*.*\w*$/m;
+  let expFallas = /^[a-zA-Z\u00C0-\u017F\s]+$/;
   let placa = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-  let nit = /^\d{4}-\d{6}-\d{3}-\d$/;
-  let 
+  let nit = /^\d{4}-\d{6}-\d{3}-\d$/; 
 
   if (!expNom.test(nombre) || nombre == ""){
     alert('ERROR: El nombre ingresado es inválido');

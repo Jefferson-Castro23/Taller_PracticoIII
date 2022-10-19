@@ -8,13 +8,28 @@ body {
   background: #bfd7ea;
 }
 
+<<<<<<< HEAD
+=======
+h1 {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  row-gap: 1rem;
+}
+>>>>>>> c64982b2b6c576f7c32f32c7090004c7f8972ec8
 
 .form {
   display: grid;
   grid-template-rows: repeat(3, 2fr);
   row-gap: 1rem;
   width: 40%;
-  height: 30rem;
+  height: 37.5rem;
   justify-content: center;
   align-items: center;
   margin: 0.5rem auto;
@@ -37,4 +52,34 @@ label {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+button {
+  margin: auto 0.5rem;
+  padding: 0.1rem;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 86%;
+}
+
+td {
+  border: 1px solid black;
+  padding: 0.8rem;
+}
+
+.titulo {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.cuerpo {
+  font-size: 1.1rem;
 }

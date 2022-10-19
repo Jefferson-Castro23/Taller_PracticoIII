@@ -46,15 +46,15 @@
           <label for="">Seleccione la Marca:</label>
           <select name="" id="marca">
             <option value="">-- Seleccione la Marca del Automóvil --</option>
-            <option value="">Mercedes</option>
-            <option value="">Audi</option>
-            <option value="">Maserati</option>
-            <option value="">Lamborghini</option>
-            <option value="">Jeep</option>
-            <option value="">Jaguar</option>
-            <option value="">Honda</option>
-            <option value="">Ford</option>
-            <option value="">Ferrari</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Audi">Audi</option>
+            <option value="Maserati">Maserati</option>
+            <option value="Lamborghini">Lamborghini</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="Ferrari">Ferrari</option>
           </select>
         </div>
 
@@ -72,12 +72,12 @@
 
         <div>
           <label for="">Año:</label>
-          <input type="number" name="Año" min="1990" max="2022" />
+          <input type="number" name="Año" id="year" />
         </div>
 
         <div>
           <label for="">Color:</label>
-          <input type="color" name="color">
+          <input type="color" name="color" id="color">
         </div>
 
         <div>
@@ -89,8 +89,18 @@
           <label for="">Ingrese las fallas</label>
           <textarea cols="30" id="fallas"></textarea>
         </div>
+      </fieldset>
+      <div id="buttons">
+        <button id="guardar">
+          Guardar Información
+        </button>
+      </div>
     </div>
-    <script src="js/script.js"></script>
+
+    <div id="datos">
+    </div>
+  </div>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

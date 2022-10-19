@@ -8,6 +8,7 @@ body {
   background: #bfd7ea;
 }
 
+
 .form {
   display: grid;
   grid-template-rows: repeat(3, 2fr);

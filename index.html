@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taller Practico III</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,8 +46,7 @@
         <div>
           <label for="">Seleccione la Marca:</label>
           <select name="" id="marca">
-            <option value="">-- Seleccione la Marca del Automóvil --</option>
-            <option value="Mercedes">Mercedes</option>
+            <option value="Mercedes" selected>Mercedes</option>
             <option value="Audi">Audi</option>
             <option value="Maserati">Maserati</option>
             <option value="Lamborghini">Lamborghini</option>
@@ -59,14 +59,8 @@
         </div>
 
         <div>
-          <label for="">Seleccione el modelo</label>
+          <label for="">Seleccione el modelo del Automóvil</label>
           <select id="modelo">
-            <option value="Mustang">Mustang</option>
-            <option value="Ferrari">Ferrari</option>
-            <option value="Lamborgini">Lamborgini</option>
-            <option value="Audi">Audi</option>
-            <option value="Pick Up">Pick Up</option>
-            <option value="Camioneta">Camioneta</option>
           </select>
         </div>
 
@@ -101,6 +95,17 @@
     </div>
   </div>
   <script src="js/script.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      let marca = $("#marca").val();
+      listarModelos(marca);
+    });
+
+    $("#marca").change(function () {
+      let marca = $("#marca").val();
+      listarModelos(marca);
+    });
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller Practico III</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bienvenido">
+	<h1>Bienvenido al Taller Xavineta</h1>
+</div>
+<div class="container">
+	<div class="form">
+
+		<div class="titulo">
+			<h3>Llene los campos solicitados</h3>
+		</div>
+		<fieldset id="datos">
+<legend>Datos</legend>
+
+<input type="text" id="nombre" value="" title="Solo se acepta letras" class="control" placeholder="Nombre" required><br>
+
+<input type="number" id="dui" value="" title="Solo se acepta numeros" class="control" placeholder="DUI" required><br>
+
+<input type="number" id="nit" value="" title="Solo se acepta numeros" class="control" placeholder="NIT" required><br>
+</table>
+
+<h4>Datos del automovil:</h4>
+
+<input type="text" id="marca" value="" class="control" placeholder="Marca" required><br>
+<td>
+<input type="text"list="modelo" placeholder="Modelos" />
+<datalist id="modelo">
+<option value="Mustang">Mustang</option>
+<option value="Ferrari">Ferrari</option>
+<option value="Lamborgini">Lamborgini</option>
+<option value="Audi">Audi</option>
+<option value="Pick Up">Pick Up</option>
+<option value="Camioneta">Camioneta</option>
+</datalist>
+<tr><td>Año:</td><td><input type="number" name="Año" min="0" max="100"/></td></tr>
+<br>
+<tr><td>Color:</td><td><input type="color"name="color"></td></tr>
+<br>
+<input type="number" id="placa" value="" class="control" placeholder="Placa" required>
+<br>
+<td><textarea rows="3" placeholder="Fallas" cols="30"></textarea></TD></TR>
+
+
+	
+</div>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

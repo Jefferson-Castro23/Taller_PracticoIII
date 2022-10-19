@@ -29,10 +29,10 @@ function guardar(){
 
 function validar(nombre, dui, nit, year, placa, fallas){
   let expNom = /^[a-zA-Z\u00C0-\u017F\s]+$/;
-  let expDui = /^\d{8}-\d$/;
-  let expFallas = /^([\w\u00C0-\u017F]+\s*[0-9]*)*.*\w*$/m;
-  let expPlaca = /^[A-Za-z0-9]/;
-  let expNit = /^\d[0-9]/
+  let expDui = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let expFallas = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let expPlaca = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let expNit = /^\d{4}-\d{6}-\d{3}-\d$/;
 
   if (!expNom.test(nombre) || nombre == ""){
     alert('ERROR: El nombre ingresado es inválido');

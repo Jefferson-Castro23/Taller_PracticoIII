@@ -36,7 +36,32 @@ function validar(nombre, dui, nit, year, placa, fallas){
 
   if (!expNom.test(nombre) || nombre == ""){
     alert('ERROR: El nombre ingresado es inválido');
-    return 0;
+    return false;
+  }
+
+  if (isNan(year) || (year < 1985 || year > 2022)){
+    alert('ERROR: Año de carro inexistente');
+    return false;
+  }
+
+  if (!expDui.test(dui) || dui == ""){
+    alert('ERROR: Dui inexistente');
+    return false;
+  }
+
+  if (!expPlaca.test(placa) || placa == ""){
+    alert('ERROR: Placa no registrada');
+    return false;
+  }
+
+  if (!expNit.test(nit) || nit == ""){
+    alert('ERROR: Nit inexistente');
+    return false;
+  }
+
+  if (!expFallas.test(fallas) || fallas == ""){
+    alert('Sus fallas seran arregaladas');
+    return false;
   }
 
   if (localStorage.length === 0){
@@ -45,8 +70,8 @@ function validar(nombre, dui, nit, year, placa, fallas){
   }else{
     console.log("hay algo");
     for (let i = 0; i < localStorage.length; i++){
-      if (localStorage.key(i) == dui){
-        
+      if (localStorage.key(i) == placa){
+        alert("Este carro ya ha sido registrado, verifique la placa");
       }
     }
   }
